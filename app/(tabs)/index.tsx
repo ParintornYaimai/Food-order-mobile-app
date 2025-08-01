@@ -1,8 +1,7 @@
+import Header from "@/components/Header";
 import { images } from "@/constants/images";
-import { Image, Pressable, Text, TextInput, View } from "react-native";
-import IconIonicons from "react-native-vector-icons/Ionicons";
+import { Image, Pressable, Text, View } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
-import IconSimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
 export default function HomeScreen() {
   return (
@@ -10,29 +9,8 @@ export default function HomeScreen() {
       {/* Header */}
       <View className="mt-10 px-5">
         {/* top header */}
-        <View className="flex-row justify-around items-center mt-5">
-          {/* search */}
-          <View>
-            <TextInput
-              placeholder="Search"
-              className="min-w-[200px] bg-white rounded-full p-2"
-            />
-          </View>
-
-          {/* Header menu */}
-          <View className="flex-row items-center justify-between gap-3">
-            <Pressable className="bg-white p-1 rounded-xl">
-              <IconIonicons name="cart-outline" color={"#E95322"} size={25} />
-            </Pressable>
-            <Pressable className="bg-white p-1 rounded-xl">
-              <IconSimpleLineIcons name="bell" color={"#E95322"} size={25} />
-            </Pressable>
-            <Pressable className="bg-white p-1 rounded-xl">
-              <IconIonicons name="person-outline" color={"#E95322"} size={25} />
-            </Pressable>
-          </View>
-        </View>
-
+        <Header/>
+        
         {/* Text */}
         <View className="my-5 px-5">
           <Text className="text-start text-white text-4xl font-black">

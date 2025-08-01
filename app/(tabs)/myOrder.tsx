@@ -1,10 +1,14 @@
+import Header from '@/components/Header'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 const myOrder = () => {
   return (
-    <View>
-      <Text>myOrder</Text>
+    <View className='flex-1 bg-yellowBase'>
+      {/* Header */}
+      <View className='mt-10 px-5'>
+        <Header/>
+      </View>
     </View>
   )
 }
