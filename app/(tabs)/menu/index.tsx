@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import { images } from "@/constants/images";
+import { Link } from "expo-router";
 import { Settings2 } from "lucide-react-native";
 import { useState } from "react";
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
@@ -84,43 +85,48 @@ const Menu = () => {
 
           {/* menu content */}
           <View className="flex-1 px-5">
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{paddingBottom:40}}>
-              <View >
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              contentContainerStyle={{ paddingBottom: 40 }}
+            >
+              <View>
                 {/* Card 1 */}
-                <View>
-                  <Image
-                    source={images.tacoImage}
-                    style={{ height: 180, width: '100%' }}
-                    className="rounded-3xl mb-2"
-                    resizeMode="cover"
-                  />
-                  <View>
-                    <View className="flex-row items-center justify-between">
-                      <View className="flex-row items-center gap-3">
-                        <Text className="text-xl font-bold">
-                          Mexican Appetizer
-                        </Text>
-                        <View className="bg-orangeBase w-2 h-2 rounded-full"></View>
-                        <Text className="bg-orangeBase rounded-2xl px-1 text-white text-sm">
-                          5.0 ⭐
-                        </Text>
+                <Link href='/(tabs)/menu/1' asChild>
+                  <Pressable>
+                    <Image
+                      source={images.tacoImage}
+                      style={{ height: 180, width: "100%" }}
+                      className="rounded-3xl mb-2"
+                      resizeMode="cover"
+                    />
+                    <View>
+                      <View className="flex-row items-center justify-between">
+                        <View className="flex-row items-center gap-3">
+                          <Text className="text-xl font-bold">
+                            Mexican Appetizer
+                          </Text>
+                          <View className="bg-orangeBase w-2 h-2 rounded-full"></View>
+                          <Text className="bg-orangeBase rounded-2xl px-1 text-white text-sm">
+                            5.0 ⭐
+                          </Text>
+                        </View>
+                        <View>
+                          <Text className="text-xl text-orangeBase font-medium">
+                            $15.00
+                          </Text>
+                        </View>
                       </View>
-                      <View>
-                        <Text className="text-xl text-orangeBase font-medium">
-                          $15.00
-                        </Text>
-                      </View>
+                      <Text>Tortilla Chips With Toppins</Text>
                     </View>
-                    <Text>Tortilla Chips With Toppins</Text>
-                  </View>
-                  <View className="border border-orange2 my-10"></View>
-                </View>
+                    <View className="border border-orange2 my-10"></View>
+                  </Pressable>
+                </Link>
 
                 {/* Card 2 */}
                 <View>
                   <Image
                     source={images.bbqImage}
-                    style={{ height: 180, width: '100%' }}
+                    style={{ height: 180, width: "100%" }}
                     className="rounded-3xl mb-2"
                     resizeMode="cover"
                   />
@@ -150,7 +156,7 @@ const Menu = () => {
                 <View>
                   <Image
                     source={images.nachosImage}
-                    style={{ height: 180, width: '100%' }}
+                    style={{ height: 180, width: "100%" }}
                     className="rounded-3xl mb-2"
                     resizeMode="cover"
                   />
