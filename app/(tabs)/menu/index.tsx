@@ -91,7 +91,7 @@ const Menu = () => {
             >
               <View>
                 {/* Card 1 */}
-                <Link href='/(tabs)/menu/1' asChild>
+                <Link  href={{ pathname: "/(tabs)/menu/[menuId]", params: { menuId: "1" } }}  asChild>
                   <Pressable>
                     <Image
                       source={images.tacoImage}
@@ -123,64 +123,68 @@ const Menu = () => {
                 </Link>
 
                 {/* Card 2 */}
-                <View>
-                  <Image
-                    source={images.bbqImage}
-                    style={{ height: 180, width: "100%" }}
-                    className="rounded-3xl mb-2"
-                    resizeMode="cover"
-                  />
-                  <View>
-                    <View className="flex-row items-center justify-between">
-                      <View className="flex-row items-center gap-3">
-                        <Text className="text-xl font-bold">
-                          Mexican Appetizer
-                        </Text>
-                        <View className="bg-orangeBase w-2 h-2 rounded-full"></View>
-                        <Text className="bg-orangeBase rounded-2xl px-1 text-white text-sm">
-                          4.0 ⭐
-                        </Text>
+                <Link  href={{ pathname: "/(tabs)/menu/[menuId]", params: { menuId: "2" } }}  asChild>
+                  <Pressable>
+                    <Image
+                      source={images.bbqImage}
+                      style={{ height: 180, width: "100%" }}
+                      className="rounded-3xl mb-2"
+                      resizeMode="cover"
+                    />
+                    <View>
+                      <View className="flex-row items-center justify-between">
+                        <View className="flex-row items-center gap-3">
+                          <Text className="text-xl font-bold">
+                            Mexican Appetizer
+                          </Text>
+                          <View className="bg-orangeBase w-2 h-2 rounded-full"></View>
+                          <Text className="bg-orangeBase rounded-2xl px-1 text-white text-sm">
+                            4.0 ⭐
+                          </Text>
+                        </View>
+                        <View>
+                          <Text className="text-xl text-orangeBase font-medium">
+                            $8.00
+                          </Text>
+                        </View>
                       </View>
-                      <View>
-                        <Text className="text-xl text-orangeBase font-medium">
-                          $8.00
-                        </Text>
-                      </View>
+                      <Text>Tortilla Chips With Toppins</Text>
                     </View>
-                    <Text>Tortilla Chips With Toppins</Text>
-                  </View>
-                  <View className="border border-orange2 my-10"></View>
-                </View>
+                    <View className="border border-orange2 my-10"></View>
+                  </Pressable>
+                </Link>
 
                 {/* Card 2 */}
-                <View>
-                  <Image
-                    source={images.nachosImage}
-                    style={{ height: 180, width: "100%" }}
-                    className="rounded-3xl mb-2"
-                    resizeMode="cover"
-                  />
-                  <View>
-                    <View className="flex-row items-center justify-between">
-                      <View className="flex-row items-center gap-3">
-                        <Text className="text-xl font-bold">
-                          Mexican Appetizer
-                        </Text>
-                        <View className="bg-orangeBase w-2 h-2 rounded-full"></View>
-                        <Text className="bg-orangeBase rounded-2xl px-1 text-white text-sm">
-                          3.5 ⭐
-                        </Text>
+                <Link  href={{ pathname: "/(tabs)/menu/[menuId]", params: { menuId: "3" } }}  asChild>
+                  <Pressable>
+                    <Image
+                      source={images.nachosImage}
+                      style={{ height: 180, width: "100%" }}
+                      className="rounded-3xl mb-2"
+                      resizeMode="cover"
+                    />
+                    <View>
+                      <View className="flex-row items-center justify-between">
+                        <View className="flex-row items-center gap-3">
+                          <Text className="text-xl font-bold">
+                            Mexican Appetizer
+                          </Text>
+                          <View className="bg-orangeBase w-2 h-2 rounded-full"></View>
+                          <Text className="bg-orangeBase rounded-2xl px-1 text-white text-sm">
+                            3.5 ⭐
+                          </Text>
+                        </View>
+                        <View>
+                          <Text className="text-xl text-orangeBase font-medium">
+                            $12.00
+                          </Text>
+                        </View>
                       </View>
-                      <View>
-                        <Text className="text-xl text-orangeBase font-medium">
-                          $12.00
-                        </Text>
-                      </View>
+                      <Text>Tortilla Chips With Toppins</Text>
                     </View>
-                    <Text>Tortilla Chips With Toppins</Text>
-                  </View>
-                  <View className="border border-orange2 my-10"></View>
-                </View>
+                    <View className="border border-orange2 my-10"></View>
+                  </Pressable>
+                </Link>
               </View>
             </ScrollView>
           </View>
