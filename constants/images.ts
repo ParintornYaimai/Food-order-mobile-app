@@ -1,3 +1,4 @@
+import bbqImage from '@/assets/images/bbqImage.jpg'
 import dessertIcon from '@/assets/images/dessertsIcon.png'
 import discountPizza from '@/assets/images/discountPizza.png'
 import drinkIcon from '@/assets/images/drinkIcon.png'
@@ -15,14 +16,15 @@ import homeIcon from '@/assets/images/homeIcon.png'
 import mealIcon from '@/assets/images/mealsIcon.png'
 import menuIcon from '@/assets/images/menuIcon.png'
 import myOrderIcon from '@/assets/images/myOrderIcon.png'
+import nachosImage from '@/assets/images/nachosImage.jpg'
 import orderFoodBackground from '@/assets/images/orderFoodBackground.png'
 import orderForFoodIcon from '@/assets/images/orderForFoodIcon.png'
 import pancakeImage from '@/assets/images/pancakeImage.jpg'
 import pizza from '@/assets/images/pizzaImage.jpg'
 import snackIcon from '@/assets/images/snackIcon.png'
 import sushiImage from '@/assets/images/sushiImage.jpg'
+import tacoImage from '@/assets/images/tacoImage.jpg'
 import veganIcon from '@/assets/images/veganIcon.png'
-
 
 export const images={
     group,
@@ -49,4 +51,7 @@ export const images={
     discountPizza,
     food1,
     food2,
+    tacoImage,
+    bbqImage,
+    nachosImage,
 }
