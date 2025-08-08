@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router'
+import { Icon } from 'lucide-react-native'
 import React from 'react'
-import { Pressable, Text, View } from 'react-native'
+import { Image, Pressable, Text, TextInput, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import EntypoIcon from 'react-native-vector-icons/Entypo'
 import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons'
@@ -23,7 +24,7 @@ const MenuDetailHeader = () => {
         {/* Header Top Row */}
         <View className="flex-row items-center justify-between">
           {/* Left: Back + Title + Dot */}
-          <View className="flex-row items-center gap-2">
+          <View className="flex-row items-center gap-2 ">
             <Pressable onPress={handleBack}>
               <MaterialIconsIcon name="keyboard-arrow-left" size={24} color="#E95322" />
             </Pressable>
@@ -47,17 +48,66 @@ const MenuDetailHeader = () => {
         </View>
 
         {/* Rating */}
-        <View className="self-start  ml-6 rounded-3xl">
+        <View className="self-start ml-9 rounded-3xl">
           <Text className="bg-orangeBase text-white px-2 py-0.5 rounded-3xl text-sm">
             5.0 ⭐
           </Text>
         </View>
       </View>
+
       {/* content */}
       <View className='flex-1 bg-white rounded-3xl'>
-        <Text>
-          
-        </Text>
+        <View>
+          {/* Food image */}
+          <View className='border border-b-orange2'>
+            <View>
+              <Image/>
+            </View>
+            <View>
+              <Text>$50.00</Text>
+              <View>
+                <Pressable>+</Pressable>
+                <Text>1</Text>
+                <Pressable>-</Pressable>
+              </View>
+            </View>
+          </View>
+
+          {/* food detail */}
+          <View>
+           <Text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, voluptates sed 
+              debitis culpa amet ipsa necessitatibus maxime voluptas provident totam.
+            </Text>
+          </View> 
+
+          {/* menu */}
+          <View>
+            {/* first Tab */}
+            <View>
+              {/* Toping name */}
+              <View>
+                <Text>Guacamole</Text>
+              </View>
+              {/* border */}
+              <View></View>
+              {/* Price & checkBox */}
+              <View>
+                <Text>$2.09</Text>
+                <TextInput/>
+              </View>
+            </View>
+
+          </View>
+        </View>
+
+        {/* Add to cart button */}
+        <View>
+          <Icon iconNode={[]}/>
+          <Pressable>
+            <Text>Add to Cart</Text>
+          </Pressable>
+        </View>
       </View>
     </SafeAreaView>
   )
