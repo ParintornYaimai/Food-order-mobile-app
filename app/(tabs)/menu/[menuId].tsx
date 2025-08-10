@@ -1,21 +1,34 @@
-import { useRouter } from 'expo-router'
-import { Icon } from 'lucide-react-native'
-import React from 'react'
-import { Image, Pressable, Text, TextInput, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import EntypoIcon from 'react-native-vector-icons/Entypo'
-import MaterialIconsIcon from 'react-native-vector-icons/MaterialIcons'
+import { images } from "@/constants/images";
+import { useRouter } from "expo-router";
+import React, { useState } from "react";
+import { Image, Pressable, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import EntypoIcon from "react-native-vector-icons/Entypo";
+import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
+import SimpleLineIconsIconsIcon from "react-native-vector-icons/SimpleLineIcons";
 
 const MenuDetailHeader = () => {
-  const router = useRouter()
+  const router = useRouter();
+  const [quantity, setQuantity] = useState<number>(1)
 
   const handleBack = () => {
-    router.back()
-  }
+    router.back();
+  };
 
   const handleFavorite = () => {
-    console.log('Favorite clicked')
-  }
+    console.log("Favorite clicked");
+  };
+  
+  //เพิ่มจำนวนสินค้า
+  const increment = () => {
+    setQuantity(prev => prev + 1);
+  };
+
+  //ลดจำนวนสินค้า
+  const decrement = () => {
+    setQuantity(prev => (prev > 1 ? prev - 1 : prev)); // ลดได้ถ้า >1 เท่านั้น
+  };
+
 
   return (
     <SafeAreaView className="flex-1 bg-yellowBase">
@@ -26,7 +39,11 @@ const MenuDetailHeader = () => {
           {/* Left: Back + Title + Dot */}
           <View className="flex-row items-center gap-2 ">
             <Pressable onPress={handleBack}>
-              <MaterialIconsIcon name="keyboard-arrow-left" size={24} color="#E95322" />
+              <MaterialIconsIcon
+                name="keyboard-arrow-left"
+                size={24}
+                color="#E95322"
+              />
             </Pressable>
             <Text
               numberOfLines={1}
@@ -56,61 +73,140 @@ const MenuDetailHeader = () => {
       </View>
 
       {/* content */}
-      <View className='flex-1 bg-white rounded-3xl'>
-        <View>
+      <View className="flex-1 bg-white rounded-3xl">
+        <View className="px-5">
           {/* Food image */}
-          <View className='border border-b-orange2'>
-            <View>
-              <Image/>
+          <View className="px-5">
+            <View className="w-full py-10">
+              <Image
+                source={images.pizza}
+                resizeMode="cover"
+                className="w-full h-72 self-center rounded-3xl"
+              />
             </View>
-            <View>
-              <Text>$50.00</Text>
-              <View>
-                <Pressable>+</Pressable>
-                <Text>1</Text>
-                <Pressable>-</Pressable>
+            <View className="flex-row items-center justify-between border-b border-orange2 mb-3">
+              <Text className="text-2xl font-black text-orangeBase">
+                $50.00
+              </Text>
+              <View className="flex-row items-center gap-5 mb-3 mt-3">
+                <Pressable className="bg-orangeBase rounded-full"  onPress={()=> decrement()}>
+                  <Text className="text-white font-bold text-2xl px-3">-</Text>
+                </Pressable>
+                <Text className="text-2xl font-bold">{quantity}</Text>
+                <Pressable className="bg-orangeBase rounded-full" onPress={()=>  increment()}>
+                  <Text className="text-white font-bold text-2xl px-2">+</Text>
+                </Pressable>
               </View>
             </View>
           </View>
 
           {/* food detail */}
-          <View>
-           <Text>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente, voluptates sed 
-              debitis culpa amet ipsa necessitatibus maxime voluptas provident totam.
+          <View className="px-5">
+            <Text className="text-md font-bold">Pizza</Text>
+            <Text>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Sapiente, voluptates sed debitis culpa amet ipsa necessitatibus
+              maxime voluptas provident totam.
             </Text>
-          </View> 
+          </View>
 
           {/* menu */}
-          <View>
-            {/* first Tab */}
+          <View className="w-full px-5 mt-5">
             <View>
+              <Text className="text-xl font-bold ">Toppings</Text>
+            </View>
+            {/* first Tab */}
+            <View className="w-full flex-row items-center justify-between py-2">
               {/* Toping name */}
               <View>
-                <Text>Guacamole</Text>
+                <Text className="text-xl">Guacamole</Text>
               </View>
-              {/* border */}
-              <View></View>
+
+              {/* เส้นขอบคั่นแนวตั้ง */}
+              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
+
               {/* Price & checkBox */}
-              <View>
+              <View className="flex flex-row items-center gap-4">
                 <Text>$2.09</Text>
-                <TextInput/>
+                <Pressable
+                  onPress={() => console.log("active")}
+                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
+                >
+                  <View className="border border-orange-400 p-2 rounded-full" />
+                </Pressable>
               </View>
             </View>
+            <View className="w-full flex-row items-center justify-between py-2">
+              {/* Toping name */}
+              <View>
+                <Text className="text-xl">Guacamole</Text>
+              </View>
 
+              {/* เส้นขอบคั่นแนวตั้ง */}
+              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
+
+              {/* Price & checkBox */}
+              <View className="flex flex-row items-center gap-4">
+                <Text>$2.09</Text>
+                <Pressable
+                  onPress={() => console.log("active")}
+                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
+                >
+                  <View className="border border-orange-400 p-2 rounded-full" />
+                </Pressable>
+              </View>
+            </View>
+            <View className="w-full flex-row items-center justify-between py-2">
+              {/* Toping name */}
+              <View>
+                <Text className="text-xl">Guacamole</Text>
+              </View>
+
+              {/* เส้นขอบคั่นแนวตั้ง */}
+              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
+
+              {/* Price & checkBox */}
+              <View className="flex flex-row items-center gap-4">
+                <Text>$2.09</Text>
+                <Pressable
+                  onPress={() => console.log("active")}
+                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
+                >
+                  <View className="border border-orange-400 p-2 rounded-full" />
+                </Pressable>
+              </View>
+            </View>
+            <View className="w-full flex-row items-center justify-between py-2">
+              {/* Toping name */}
+              <View>
+                <Text className="text-xl">Guacamole</Text>
+              </View>
+
+              {/* เส้นขอบคั่นแนวตั้ง */}
+              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
+
+              {/* Price & checkBox */}
+              <View className="flex flex-row items-center gap-4">
+                <Text>$2.09</Text>
+                <Pressable
+                  onPress={() => console.log("active")}
+                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
+                >
+                  <View className="border border-orange-400 p-2 rounded-full" />
+                </Pressable>
+              </View>
+            </View>
           </View>
         </View>
 
         {/* Add to cart button */}
-        <View>
-          <Icon iconNode={[]}/>
-          <Pressable>
-            <Text>Add to Cart</Text>
-          </Pressable>
-        </View>
+        <Pressable className="self-center flex-row items-center bg-orangeBase px-6 py-1 gap-4 mt-2 rounded-full">
+          <SimpleLineIconsIconsIcon name="handbag" size={15} color="#fff" />
+          <Text className="text-white font-medium text-xl">Add to Cart</Text>
+        </Pressable>
       </View>
     </SafeAreaView>
-  )
-}
+  );
+};
 
-export default MenuDetailHeader
+export default MenuDetailHeader;
