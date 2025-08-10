@@ -77,14 +77,14 @@ const MenuDetailHeader = () => {
         <View className="px-5">
           {/* Food image */}
           <View className="px-5">
-            <View className="w-full py-10">
+            <View className="w-full pt-10">
               <Image
                 source={images.pizza}
                 resizeMode="cover"
                 className="w-full h-72 self-center rounded-3xl"
               />
             </View>
-            <View className="flex-row items-center justify-between border-b border-orange2 mb-3">
+            <View className="flex-row items-center justify-between border-b border-orange2 mb-3 mt-5">
               <Text className="text-2xl font-black text-orangeBase">
                 $50.00
               </Text>
@@ -130,9 +130,49 @@ const MenuDetailHeader = () => {
                 <Text>$2.09</Text>
                 <Pressable
                   onPress={() => console.log("active")}
-                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
+                  className="w-6 h-6 rounded-full border border-orangeBase flex items-center justify-center"
                 >
-                  <View className="border border-orange-400 p-2 rounded-full" />
+                  <View className="border border-orangeBase p-2 rounded-full" />
+                </Pressable>
+              </View>
+            </View>
+            <View className="w-full flex-row items-center justify-between py-2">
+              {/* Toping name */}
+              <View>
+                <Text className="text-xl">Guacamole</Text>
+              </View>
+
+              {/* เส้นขอบคั่นแนวตั้ง */}
+              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
+
+              {/* Price & checkBox */}
+              <View className="flex flex-row items-center gap-4">
+                <Text>$2.09</Text>
+                <Pressable
+                  onPress={() => console.log("active")}
+                  className="w-6 h-6 rounded-full border border-orangeBase flex items-center justify-center"
+                >
+                  <View className="border border-orangeBase p-2 rounded-full" />
+                </Pressable>
+              </View>
+            </View>
+            <View className="w-full flex-row items-center justify-between py-2">
+              {/* Toping name */}
+              <View>
+                <Text className="text-xl">Guacamole</Text>
+              </View>
+
+              {/* เส้นขอบคั่นแนวตั้ง */}
+              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
+
+              {/* Price & checkBox */}
+              <View className="flex flex-row items-center gap-4">
+                <Text>$2.09</Text>
+                <Pressable
+                  onPress={() => console.log("active")}
+                  className="w-6 h-6 rounded-full border border-orangeBase flex items-center justify-center"
+                >
+                  <View className="border border-orangeBase p-2 rounded-full" />
                 </Pressable>
               </View>
             </View>
@@ -152,47 +192,7 @@ const MenuDetailHeader = () => {
                   onPress={() => console.log("active")}
                   className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
                 >
-                  <View className="border border-orange-400 p-2 rounded-full" />
-                </Pressable>
-              </View>
-            </View>
-            <View className="w-full flex-row items-center justify-between py-2">
-              {/* Toping name */}
-              <View>
-                <Text className="text-xl">Guacamole</Text>
-              </View>
-
-              {/* เส้นขอบคั่นแนวตั้ง */}
-              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
-
-              {/* Price & checkBox */}
-              <View className="flex flex-row items-center gap-4">
-                <Text>$2.09</Text>
-                <Pressable
-                  onPress={() => console.log("active")}
-                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
-                >
-                  <View className="border border-orange-400 p-2 rounded-full" />
-                </Pressable>
-              </View>
-            </View>
-            <View className="w-full flex-row items-center justify-between py-2">
-              {/* Toping name */}
-              <View>
-                <Text className="text-xl">Guacamole</Text>
-              </View>
-
-              {/* เส้นขอบคั่นแนวตั้ง */}
-              <View className="w-44 border-b-2 border-dotted border-orange2 my-2" />
-
-              {/* Price & checkBox */}
-              <View className="flex flex-row items-center gap-4">
-                <Text>$2.09</Text>
-                <Pressable
-                  onPress={() => console.log("active")}
-                  className="w-6 h-6 rounded-full border border-orange-500 flex items-center justify-center"
-                >
-                  <View className="border border-orange-400 p-2 rounded-full" />
+                  <View className="border border-orangeBase p-2 rounded-full" />
                 </Pressable>
               </View>
             </View>
