@@ -37,6 +37,8 @@ const favoritesOrder = () => {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           horizontal={false}
+          bounces={false}         
+          overScrollMode="never"
           contentContainerStyle={{ paddingBottom: 50 }}
           className="flex-1 rounded-3xl bg-white mt-5"
         >
