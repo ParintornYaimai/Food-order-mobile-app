@@ -29,6 +29,8 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
         horizontal={false}
+        bounces={false}         
+        overScrollMode="never"
         contentContainerStyle={{ paddingBottom: 80 }}
       >
         <View>
