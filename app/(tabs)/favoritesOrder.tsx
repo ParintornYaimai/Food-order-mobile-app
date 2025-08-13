@@ -28,7 +28,7 @@ const favoritesOrder = () => {
             />
           </Pressable>
           <Text className="text-center font-black text-3xl text-white">
-            Best Seller
+            Favorites
           </Text>
         </View>
 

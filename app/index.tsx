@@ -8,7 +8,7 @@ const index = () => {
   setTimeout(() => {
     // router.push('/(auth)/register')
     // router.push('/(auth)/resetPassword')
-    router.push('/(tabs)/myOrder')
+    router.push('/(tabs)/myOrder/history')
     // router.push('/(auth)/login')
     // router.push('/(onboarding)/orderForFood')
     // router.push('./welcome')
@@ -16,6 +16,7 @@ const index = () => {
 
   return (
     <View className="flex-1 items-center justify-center bg-yellowBase">
+      {/* Header */}
       <View className="items-center">
         <Image source={images.group} className="mb-10"  
           style={{ width: 200, height: 170 }}
