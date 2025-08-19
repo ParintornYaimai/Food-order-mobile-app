@@ -8,7 +8,7 @@ const index = () => {
   setTimeout(() => {
     // router.push('/(auth)/register')
     // router.push('/(auth)/resetPassword')
-    router.push('/(tabs)/myOrder/[orderId]')
+    router.push('/(tabs)/myOrder/history')
     // router.push('/(auth)/login')
     // router.push('/(onboarding)/orderForFood')
     // router.push('./welcome')

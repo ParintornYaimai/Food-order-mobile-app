@@ -17,7 +17,7 @@ const history = () => {
       <View className="flex-1">
         {/* Header */}
         <View className="flex-row items-center justify-center py-2 px-4 mt-5 mx-5">
-          <Pressable onPress={handleBack} className="absolute left-4">
+          <Pressable onPress={()=>router.back()} className="absolute left-4">
             <MaterialIconsIcon
               name="keyboard-arrow-left"
               size={24}
@@ -77,7 +77,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
@@ -121,7 +121,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
@@ -164,7 +164,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
@@ -207,7 +207,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
@@ -250,7 +250,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
@@ -293,7 +293,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
@@ -336,7 +336,7 @@ const history = () => {
                 </Text>
               </View>
               <View className="mt-2">
-                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }}>
+                <Pressable className="bg-orangeBase px-4 rounded-3xl" style={{ paddingVertical: wp('0.3%') }} onPress={()=>router.push('/(tabs)/myOrder/[orderId]')}>
                   <Text className="text-white ">Details</Text>
                 </Pressable>
               </View>
