@@ -7,7 +7,7 @@ import {
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
 import { SafeAreaView } from "react-native-safe-area-context";
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import EvilIcons from "react-native-vector-icons/EvilIcons";
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 
 const modes = [
@@ -18,8 +18,7 @@ const modes = [
 
 const myOrder = () => {
   const router = useRouter();
-
-  const [mode, setMode] = useState<(typeof modes)[number]["key"]>("cancel");
+  const [mode, setMode] = useState<(typeof modes)[number]["key"]>("active");
 
   const handleBack = () => {
     router.back();
@@ -122,7 +121,13 @@ const myOrder = () => {
                   {/* Button */}
                   {mode !== "cancel" ? (
                     <View className="flex-row items-center justify-between pl-4">
-                      <Pressable>
+                      <Pressable
+                        onPress={() => {
+                          if(mode === "active"){
+                            router.push("./myOrder/cancelOrder"); 
+                          }
+                        }}
+                      >
                         <Text
                           className={`text-md font-normal ${
                             mode === "active"
@@ -148,7 +153,7 @@ const myOrder = () => {
                         </Text>
                       </Pressable>
                     </View>
-                  ):(
+                  ) : (
                     <View className="flex-row items-center justify-start pl-3 mt-0 gap-1">
                       <EvilIcons name="exclamation" size={20} color="#E95322" />
                       <Text className="text-md font-normal text-orangeBase pt-1 ">
