@@ -2,25 +2,24 @@ import { images } from "@/constants/images";
 import { useRouter } from "expo-router";
 import React from "react";
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
-import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
+import {
+  heightPercentageToDP as hp,
+  widthPercentageToDP as wp,
+} from "react-native-responsive-screen";
 import { SafeAreaView } from "react-native-safe-area-context";
 import EntypoIcon from "react-native-vector-icons/Entypo";
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Ionicons from "react-native-vector-icons/Ionicons";
 import MaterialIconsIcon from "react-native-vector-icons/MaterialIcons";
 
 const favoritesOrder = () => {
   const router = useRouter();
-
-  const handleBack = () => {
-    router.back();
-  };
 
   return (
     <SafeAreaView className="flex-1 bg-yellowBase">
       <View className="flex-1">
         {/* Header */}
         <View className="flex-row items-center justify-center py-2 px-4 mt-5 mx-5">
-          <Pressable onPress={handleBack} className="absolute left-4">
+          <Pressable onPress={() => router.back()} className="absolute left-4">
             <MaterialIconsIcon
               name="keyboard-arrow-left"
               size={24}
@@ -28,7 +27,7 @@ const favoritesOrder = () => {
             />
           </Pressable>
           <Text className="text-center font-black text-3xl text-white">
-            Favorites
+            History
           </Text>
         </View>
 
@@ -37,7 +36,7 @@ const favoritesOrder = () => {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           horizontal={false}
-          bounces={false}         
+          bounces={false}
           overScrollMode="never"
           contentContainerStyle={{ paddingBottom: 50 }}
           className="flex-1 rounded-3xl bg-white mt-5"
@@ -59,7 +58,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -70,7 +69,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -101,14 +104,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -116,7 +123,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -127,7 +134,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -157,10 +168,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -173,7 +189,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -184,7 +200,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -215,14 +235,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -230,7 +254,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -241,7 +265,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -271,10 +299,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -287,7 +320,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -298,7 +331,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -329,14 +366,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -344,7 +385,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -355,7 +396,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -385,10 +430,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -401,7 +451,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -412,7 +462,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -443,14 +497,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -458,7 +516,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -469,7 +527,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -499,10 +561,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -515,7 +582,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -526,7 +593,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -557,14 +628,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -572,7 +647,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -583,7 +658,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -613,10 +692,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -629,7 +713,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -640,7 +724,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -671,14 +759,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -686,7 +778,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -697,7 +789,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -727,10 +823,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -743,7 +844,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -754,7 +855,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -785,14 +890,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -800,7 +909,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -811,7 +920,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -841,10 +954,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -857,7 +975,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -868,7 +986,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -899,14 +1021,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -914,7 +1040,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -925,7 +1051,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -955,10 +1085,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -971,7 +1106,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -982,7 +1117,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1013,14 +1152,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -1028,7 +1171,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -1039,7 +1182,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1069,10 +1216,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -1085,7 +1237,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -1096,7 +1248,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1127,14 +1283,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -1142,7 +1302,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -1153,7 +1313,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1183,10 +1347,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -1199,7 +1368,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -1210,7 +1379,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1241,14 +1414,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -1256,7 +1433,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -1267,7 +1444,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1297,10 +1478,15 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
@@ -1313,7 +1499,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.frenchFriesImage}
@@ -1324,7 +1510,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1355,14 +1545,18 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
-
                 </View>
 
                 {/* second menu */}
@@ -1370,7 +1564,7 @@ const favoritesOrder = () => {
                   {/* Image & category icon & price */}
                   <View
                     className="relative rounded-3xl overflow-hidden"
-                    style={{ width: wp('41.5%'), height: hp('15%') }}
+                    style={{ width: wp("41.5%"), height: hp("15%") }}
                   >
                     <Image
                       source={images.nachosImage}
@@ -1381,7 +1575,11 @@ const favoritesOrder = () => {
                     {/* food category icon & fav icon */}
                     <View className="w-full absolute top-3 flex-row items-center justify-between px-2">
                       <View className="bg-white p-1 rounded-lg">
-                        <Ionicons name="fast-food-outline" size={15} color="#E95322" />
+                        <Ionicons
+                          name="fast-food-outline"
+                          size={15}
+                          color="#E95322"
+                        />
                       </View>
                       <View className="bg-white p-1 rounded-full">
                         <EntypoIcon name="heart" size={15} color="#E95322" />
@@ -1411,17 +1609,20 @@ const favoritesOrder = () => {
                     {/* description & cartIcon */}
                     <View className="flex-row items-center justify-between px-2">
                       <Text className="text-xs font-light line-clamp-2 flex-1 mr-2">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, accusamus.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        In, accusamus.
                       </Text>
                       <View className="bg-orangeBase rounded-md">
-                        <Ionicons name="cart-outline" size={20} color="#FFFFFF" />
+                        <Ionicons
+                          name="cart-outline"
+                          size={20}
+                          color="#FFFFFF"
+                        />
                       </View>
                     </View>
                   </View>
                 </View>
               </View>
-
-
             </View>
           </View>
         </ScrollView>
