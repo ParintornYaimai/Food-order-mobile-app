@@ -8,10 +8,10 @@ const index = () => {
   setTimeout(() => {
     // router.push('/(auth)/register')
     // router.push('/(auth)/resetPassword')
-    router.push('/(tabs)/myOrder/history')
+    // router.push('/(tabs)/myOrder/cancelOrder')
     // router.push('/(auth)/login')
     // router.push('/(onboarding)/orderForFood')
-    // router.push('./welcome')
+    router.push('/(tabs)/myOrder')
   }, 1000);
 
   return (
