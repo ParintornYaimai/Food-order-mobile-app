@@ -11,7 +11,7 @@ const index = () => {
     // router.push('/(tabs)/myOrder/cancelOrder')
     // router.push('/(auth)/login')
     // router.push('/(onboarding)/orderForFood')
-    router.push('/(tabs)/helpCenter/support')
+    router.push('/(tabs)/helpCenter')
   }, 1000);
 
   return (
