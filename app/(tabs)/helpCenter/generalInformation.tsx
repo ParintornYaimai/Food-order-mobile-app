@@ -16,9 +16,7 @@ const GeneralInformation = () => {
   const router = useRouter();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [mode1, setMode1] = useState<"faq" | "contact">("faq");
-  const [mode2, setMode2] = useState<"general" | "account" | "service">(
-    "general"
-  );
+  const [mode2, setMode2] = useState<"general" | "account" | "service">("general");
 
   const contentAnims = useRef(
     [...Array(5)].map(() => new Animated.Value(0))
