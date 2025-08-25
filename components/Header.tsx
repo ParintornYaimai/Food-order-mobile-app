@@ -3,7 +3,13 @@ import { Pressable, TextInput, View } from "react-native";
 import IconIonicons from "react-native-vector-icons/Ionicons";
 import IconSimpleLineIcons from "react-native-vector-icons/SimpleLineIcons";
 
-const Header = () => {
+// กำหนด param list ของ Drawer
+type Props = {
+  onMenuPress: ()=>void;
+};
+
+const Header = ({ onMenuPress }:Props) => {
+
   return (
     <View className="flex-row justify-around items-center mt-5">
       {/* search */}
@@ -22,7 +28,10 @@ const Header = () => {
         <Pressable className="bg-white p-1 rounded-xl">
           <IconSimpleLineIcons name="bell" color={"#E95322"} size={25} />
         </Pressable>
-        <Pressable className="bg-white p-1 rounded-xl">
+        <Pressable
+          className="bg-white p-1 rounded-xl"
+          onPress={onMenuPress}// เปิด Drawer
+        >
           <IconIonicons name="person-outline" color={"#E95322"} size={25} />
         </Pressable>
       </View>

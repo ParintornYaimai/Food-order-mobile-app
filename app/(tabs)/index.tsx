@@ -1,16 +1,23 @@
-import Header from "@/components/Header";
 import { images } from "@/constants/images";
+import React, { useState } from 'react';
 import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-native-responsive-screen";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import Header from "../../components/Header";
+import Sidebar from "../../components/SlideBar";
 
 export default function HomeScreen() {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const openSidebar = () => setSidebarVisible(true);
+  const closeSidebar = () => setSidebarVisible(false);
+
   return (
     <View className="flex-1 bg-yellowBase">
       {/* Header */}
       <View className="mt-10 px-5">
         {/* top header */}
-        <Header/>
+        <Header onMenuPress={openSidebar} />
         
         {/* Text */}
         <View className="my-5 px-5">
@@ -176,10 +183,7 @@ export default function HomeScreen() {
             <View className="w-full flex-wrap items-center justify-center gap-2">
               <View className="w-full flex-row items-center justify-center gap-2">
                 {/* Card1 */}
-                <View
-                  className="w-1/2 relative rounded-3xl overflow-hidden"
-                  // style={{ width: wp(50) }}
-                >
+                <View className="w-1/2 relative rounded-3xl overflow-hidden">
                   <Image
                     source={images.food1}
                     resizeMode="cover"
@@ -199,10 +203,7 @@ export default function HomeScreen() {
                 </View>
 
                 {/* Card2 */}
-                <View
-                  className="w-1/2 relative rounded-3xl overflow-hidden"
-                  // style={{ width: wp(50) }}
-                >
+                <View className="w-1/2 relative rounded-3xl overflow-hidden">
                   <Image
                     source={images.food2}
                     resizeMode="cover"
@@ -221,108 +222,16 @@ export default function HomeScreen() {
                   </View>
                 </View>
               </View>
-              <View className="w-full flex-row items-center justify-center gap-2">
-                {/* Card1 */}
-                <View
-                  className="w-1/2 relative rounded-3xl overflow-hidden"
-                  // style={{ width: wp(50) }}
-                >
-                  <Image
-                    source={images.food1}
-                    resizeMode="cover"
-                    style={{ width: "100%", height: hp(15) }}
-                  />
-                  <View className="absolute top-2 left-2 bg-white/80 px-2 py-1 rounded-full flex-row items-center gap-1">
-                    <Text className="text-xs font-bold">5.0</Text>
-                    <Text className="text-xs">⭐</Text>
-                  </View>
-                  <View className="absolute top-2 right-4 bg-white/80 p-1 rounded-full flex-row items-center">
-                    <Text className="text-xs text-red-500">❤️</Text>
-                  </View>
-                  {/* Price */}
-                  <View className="absolute bottom-5 right-0 bg-orangeBase px-2 py-1 rounded-full rounded-tr-xl rounded-br-xl">
-                    <Text className="text-white/80 text-sm ">$10.0</Text>
-                  </View>
-                </View>
-
-                {/* Card2 */}
-                <View
-                  className="w-1/2 relative rounded-3xl overflow-hidden"
-                  // style={{ width: wp(50) }}
-                >
-                  <Image
-                    source={images.food2}
-                    resizeMode="cover"
-                    style={{ width: "100%", height: hp(15) }}
-                  />
-                  <View className="absolute top-2 left-2 bg-white/80 px-2 py-1 rounded-full flex-row items-center gap-1">
-                    <Text className="text-xs font-bold">5.0</Text>
-                    <Text className="text-xs">⭐</Text>
-                  </View>
-                  <View className="absolute top-2 right-4 bg-white/80 p-1 rounded-full flex-row items-center">
-                    <Text className="text-xs text-red-500">❤️</Text>
-                  </View>
-                  {/* Price */}
-                  <View className="absolute bottom-5 right-0 bg-orangeBase px-2 py-1 rounded-full rounded-tr-xl rounded-br-xl">
-                    <Text className="text-white/80 text-sm ">$25.0</Text>
-                  </View>
-                </View>
-              </View>
-              <View className="w-full flex-row items-center justify-center gap-2">
-                {/* Card1 */}
-                <View
-                  className="w-1/2 relative rounded-3xl overflow-hidden"
-                  // style={{ width: wp(50) }}
-                >
-                  <Image
-                    source={images.food1}
-                    resizeMode="cover"
-                    style={{ width: "100%", height: hp(15) }}
-                  />
-                  <View className="absolute top-2 left-2 bg-white/80 px-2 py-1 rounded-full flex-row items-center gap-1">
-                    <Text className="text-xs font-bold">5.0</Text>
-                    <Text className="text-xs">⭐</Text>
-                  </View>
-                  <View className="absolute top-2 right-4 bg-white/80 p-1 rounded-full flex-row items-center">
-                    <Text className="text-xs text-red-500">❤️</Text>
-                  </View>
-                  {/* Price */}
-                  <View className="absolute bottom-5 right-0 bg-orangeBase px-2 py-1 rounded-full rounded-tr-xl rounded-br-xl">
-                    <Text className="text-white/80 text-sm ">$10.0</Text>
-                  </View>
-                </View>
-
-                {/* Card2 */}
-                <View
-                  className="w-1/2 relative rounded-3xl overflow-hidden"
-                  // style={{ width: wp(50) }}
-                >
-                  <Image
-                    source={images.food2}
-                    resizeMode="cover"
-                    style={{ width: "100%", height: hp(15) }}
-                  />
-                  <View className="absolute top-2 left-2 bg-white/80 px-2 py-1 rounded-full flex-row items-center gap-1">
-                    <Text className="text-xs font-bold">5.0</Text>
-                    <Text className="text-xs">⭐</Text>
-                  </View>
-                  <View className="absolute top-2 right-4 bg-white/80 p-1 rounded-full flex-row items-center">
-                    <Text className="text-xs text-red-500">❤️</Text>
-                  </View>
-                  {/* Price */}
-                  <View className="absolute bottom-5 right-0 bg-orangeBase px-2 py-1 rounded-full rounded-tr-xl rounded-br-xl">
-                    <Text className="text-white/80 text-sm ">$25.0</Text>
-                  </View>
-                </View>
-              </View>
-
-              
             </View>
-
           </View>
         </View>
       </ScrollView>
       
+      {/* Sidebar */}
+      <Sidebar 
+        isVisible={sidebarVisible} 
+        onClose={closeSidebar} 
+      />
     </View>
   );
 }
