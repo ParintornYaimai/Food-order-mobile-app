@@ -1,11 +1,13 @@
+import order from '';
+import { useRouter } from "expo-router";
 import React from "react";
 import {
-    Animated,
-    Dimensions,
-    Modal,
-    Pressable,
-    Text,
-    View,
+  Animated,
+  Dimensions,
+  Modal,
+  Pressable,
+  Text,
+  View,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Icon from "react-native-vector-icons/MaterialIcons";
@@ -20,7 +22,7 @@ type Props = {
 export default function Sidebar({ isVisible, onClose }: Props) {
   const insets = useSafeAreaInsets();
   const slideAnim = React.useRef(new Animated.Value(width)).current; // เริ่มจากขวา
-
+  const router = useRouter()
   React.useEffect(() => {
     Animated.timing(slideAnim, {
       toValue: isVisible ? 0 : width, 
@@ -45,8 +47,8 @@ export default function Sidebar({ isVisible, onClose }: Props) {
           width: width * 0.8,
           right: 0,
           transform: [{ translateX: slideAnim }],
-          borderTopLeftRadius: 40,
-          borderBottomLeftRadius: 40,
+          borderTopLeftRadius: 60,
+          borderBottomLeftRadius: 60,
         }}
       >
         {/* StatusBar padding */}
@@ -76,8 +78,8 @@ export default function Sidebar({ isVisible, onClose }: Props) {
         {/* Menu Items */}
         <View className="flex-1 px-6">
           {[
-            { icon: "shopping-bag", title: "My Orders" },
-            { icon: "person", title: "My Profile" },
+            { icon: "shopping-bag", title: "My Orders",navigate:'(tabs)/myOrder' },
+            { icon: "person", title: "My Profile", navigator:'(profile)/'},
             { icon: "location-on", title: "Delivery Address" },
             { icon: "credit-card", title: "Payment Methods" },
             { icon: "phone", title: "Contact Us" },
@@ -88,6 +90,7 @@ export default function Sidebar({ isVisible, onClose }: Props) {
               <Pressable
                 className="flex-row items-center py-4"
                 android_ripple={{ color: "rgba(255,255,255,0.1)" }}
+                onPress={() => router.push(item.navigate)}
               >
                 <View className="w-10 h-10 bg-white rounded-full items-center justify-center mr-4">
                   <Icon name={item.icon} size={20} color="#E95322" />
