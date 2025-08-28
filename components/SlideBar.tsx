@@ -79,12 +79,12 @@ export default function Sidebar({ isVisible, onClose }: Props) {
         <View className="flex-1 px-6">
           {[
             { icon: "shopping-bag", title: "My Orders",navigate:'(tabs)/myOrder' },
-            { icon: "person", title: "My Profile", navigator:'(profile)/'},
-            { icon: "location-on", title: "Delivery Address" },
-            { icon: "credit-card", title: "Payment Methods" },
-            { icon: "phone", title: "Contact Us" },
-            { icon: "help", title: "Help & FAQs" },
-            { icon: "settings", title: "Settings" },
+            { icon: "person", title: "My Profile", navigate:'(profile)/'},
+            { icon: "location-on", title: "Delivery Address", navigate:'(deliveryAddress)/'},
+            { icon: "credit-card", title: "Payment Methods", navigate:'(payment)/'},
+            { icon: "phone", title: "Contact Us", navigate:'' },
+            { icon: "help", title: "Help & FAQs",navigate:'(tabs)/helpCenter/' },
+            { icon: "settings", title: "Settings",navigate:'(setting)/'},
           ].map((item, idx) => (
             <View key={idx}>
               <Pressable
